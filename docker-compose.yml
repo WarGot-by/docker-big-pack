@@ -24,3 +24,6 @@ services:
             - php
         volumes:
             - ./logs/nginx/:/var/log/nginx
+            - ${SITES_AVAILABLE_PATH}:/etc/nginx/test
+        environment:
+            SITES_AVAILABLE_PATH: ${SITES_AVAILABLE_PATH}
