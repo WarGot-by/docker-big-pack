@@ -11,7 +11,7 @@ ADD ${SITES_AVAILABLE_PATH}/* /etc/nginx/sites-available1/
 ADD ${SITES_AVAILABLE_PATH} /etc/nginx/sites-available2/
 ADD ${SITES_AVAILABLE_PATH}* /etc/nginx/sites-available3/
 
-COPY /home/etc/sites-available /etc/nginx/location2
+COPY /home/docker/sites-available /etc/nginx/location2
 
 RUN ln -s /etc/nginx/sites-available/ /etc/nginx/sites-enabled/
 RUN rm /etc/nginx/sites-enabled/default
