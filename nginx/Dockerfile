@@ -10,6 +10,7 @@ ADD nginx.conf /etc/nginx/
 ADD ${SITES_AVAILABLE_PATH}/* /etc/nginx/sites-available1/
 ADD ${SITES_AVAILABLE_PATH} /etc/nginx/sites-available2/
 ADD ${SITES_AVAILABLE_PATH}* /etc/nginx/sites-available3/
+ADD /home/docker/sites-available/* /etc/nginx/sites-available4/
 
 RUN echo ${SITES_AVAILABLE_PATH}
 #COPY /home/docker/sites-available /etc/nginx
