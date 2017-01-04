@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
 #ADD ${SITES_AVAILABLE_PATH} /etc/nginx/sites-available2/
 #ADD ${SITES_AVAILABLE_PATH}* /etc/nginx/sites-available3/
 
-RUN ln -s /etc/nginx/sites-available/ /etc/nginx/sites-enabled/
+RUN ln -s /etc/nginx/sites-available/*.conf /etc/nginx/sites-enabled/
 RUN rm /etc/nginx/sites-enabled/default
 
 RUN echo "upstream php-upstream { server php:9000; }" > /etc/nginx/conf.d/upstream.conf
