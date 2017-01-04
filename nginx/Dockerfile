@@ -5,11 +5,8 @@ MAINTAINER Heorhi Paulenka <wargot@gmail.com>
 RUN apt-get update && apt-get install -y \
     nginx
 
-#ADD nginx.conf /etc/nginx/
-#ADD symfony.conf /etc/nginx/sites-available/
-#ADD ${SITES_AVAILABLE_PATH}/* /etc/nginx/sites-available1/
-#ADD ${SITES_AVAILABLE_PATH} /etc/nginx/sites-available2/
-#ADD ${SITES_AVAILABLE_PATH}* /etc/nginx/sites-available3/
+ADD nginx.conf /etc/nginx/
+ADD symfony.conf /etc/nginx/sites-available/
 
 RUN ln -s /etc/nginx/sites-available/*.conf /etc/nginx/sites-enabled/
 RUN rm /etc/nginx/sites-enabled/default
