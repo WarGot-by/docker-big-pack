@@ -16,3 +16,11 @@ services:
             - 9000:9000
         volumes:
             - ${WWW_APP_PATH}:/var/www
+    nginx:
+        build: nginx
+        ports:
+            - 80:80
+        volumes_from:
+            - php
+        volumes:
+            - ./logs/nginx/:/var/log/nginx
