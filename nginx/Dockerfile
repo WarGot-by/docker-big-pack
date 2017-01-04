@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -y \
 #ADD ${SITES_AVAILABLE_PATH} /etc/nginx/sites-available2/
 #ADD ${SITES_AVAILABLE_PATH}* /etc/nginx/sites-available3/
 
-RUN cp /home/docker/sites-available/* /etc/nginx/sites-available4/
 RUN ln -s /etc/nginx/sites-available/ /etc/nginx/sites-enabled/
 RUN rm /etc/nginx/sites-enabled/default
 
