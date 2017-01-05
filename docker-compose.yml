@@ -15,6 +15,7 @@ services:
         ports:
             - 9000:9000
         volumes:
+            - ./logs/php/:/var/log/
             - ${WWW_APP_PATH}:/var/www
     nginx:
         build: nginx

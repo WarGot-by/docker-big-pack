@@ -12,7 +12,7 @@ RUN composer --version
 
 # Set timezone
 RUN rm /etc/localtime
-RUN ln -s /usr/share/zoneinfo/Europe/Minsk /etc/localtime
+#RUN ln -s /usr/share/zoneinfo/Europe/Minsk /etc/localtime
 RUN "date"
 
 # Type docker-php-ext-install to see available extensions
@@ -31,6 +31,6 @@ RUN docker-php-ext-install pdo pdo_mysql
 #RUN echo "xdebug.remote_port=9001" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 #php config
-RUN echo "error_log = log/php-fpm.log" >> /usr/local/etc/php/conf.d/php-ext.ini
+RUN echo "error_log = /var/log/php-fpm.log" >> /usr/local/etc/php/conf.d/php-ext.ini
 
 WORKDIR /var/www
