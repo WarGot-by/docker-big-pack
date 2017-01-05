@@ -1,4 +1,3 @@
-Dockerfile
 FROM php:7.0-fpm
 
 MAINTAINER Maxence POUTORD <maxence.poutord@gmail.com>
