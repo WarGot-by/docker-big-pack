@@ -31,9 +31,6 @@ RUN docker-php-ext-install pdo pdo_mysql
 #RUN echo "xdebug.remote_port=9001" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 #php config
-#RUN echo "error_log = log/php-fpm.log" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
-
-#RUN echo 'alias sf="php app/console"' >> ~/.bashrc
-#RUN echo 'alias sf3="php bin/console"' >> ~/.bashrc
+RUN echo "error_log = log/php-fpm.log" >> /usr/local/etc/php/conf.d/php-ext.ini
 
 WORKDIR /var/www
