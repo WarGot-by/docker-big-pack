@@ -4,7 +4,7 @@ services:
     db:
         image: mysql
         volumes:
-            - "./.data/db:/var/lib/mysql"
+            - "/home/data/mysql/db:/var/lib/mysql"
         environment:
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
             MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -15,8 +15,10 @@ services:
         ports:
             - 9000:9000
         volumes:
-            - ./logs/php/:/var/log/
+            - /home/logs/php/:/var/log/
             - ${WWW_APP_PATH}:/var/www
+            - /home/deploy/:/var/deploy
+        container_name: php7.0            
     nginx:
         build: nginx
         ports:
@@ -24,7 +26,7 @@ services:
         volumes_from:
             - php
         volumes:
-            - ./logs/nginx/:/var/log/nginx
+            - /home/logs/nginx/:/var/log/nginx
             - ${SITES_AVAILABLE_PATH}:/etc/nginx/sites-available
         environment:
             SITES_AVAILABLE_PATH: ${SITES_AVAILABLE_PATH}
