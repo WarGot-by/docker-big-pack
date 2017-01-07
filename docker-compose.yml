@@ -17,7 +17,7 @@ services:
         volumes:
             - /home/logs/php/:/var/log/
             - ${WWW_APP_PATH}:/var/www
-            - /home/deploy/:/var/deploy
+            - /home/deploy/:/var/deploy/
         container_name: php7.0            
     nginx:
         build: nginx
