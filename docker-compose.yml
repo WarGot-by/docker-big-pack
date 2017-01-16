@@ -18,7 +18,7 @@ services:
             - /home/logs/php/:/var/log/
             - ${WWW_APP_PATH}:/var/www
             - /home/deploy/:/var/deploy/
-            - ~/.ssh/:~/.ssh/
+            - ~/.ssh/:/root/.ssh
         container_name: php7.0
     nginx:
         build: nginx
