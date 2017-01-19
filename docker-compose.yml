@@ -31,3 +31,9 @@ services:
             - ${SITES_AVAILABLE_PATH}:/etc/nginx/sites-available
         environment:
             SITES_AVAILABLE_PATH: ${SITES_AVAILABLE_PATH}
+    ruby:
+        image: fabrizzio/docker-capistrano
+        volumes:
+            - ${WWW_APP_PATH}:/var/www
+            - ~/.ssh/:/root/.ssh
+        container_name: ruby
