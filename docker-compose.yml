@@ -19,7 +19,7 @@ services:
             - ${WWW_APP_PATH}:/var/www
             - /home/deploy/:/var/deploy/
             - ~/.ssh/:/root/.ssh
-            - ~/.ssh/:/www-data/.ssh
+            - ~/.ssh/:/www/.ssh
         container_name: php7.0
     nginx:
         build: nginx
